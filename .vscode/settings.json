@@ -10,6 +10,8 @@
     "string": "cpp",
     "vector": "cpp",
     "chrono": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "cmath": "cpp",
+    "complex": "cpp"
   }
 }
