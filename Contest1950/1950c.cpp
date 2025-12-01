@@ -11,8 +11,8 @@ int main () {
     int p = a[0] - '0';
     int s = a[1] - '0';
 
-    int m1 = a[3];
-    int m2 = a[4];
+    char m1 = a[3];
+    char m2 = a[4];
 
     int h = 0;
     h += (10*p) + s;
