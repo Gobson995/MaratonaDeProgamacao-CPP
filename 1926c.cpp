@@ -2,15 +2,6 @@
 
 using namespace std;
 
-int soma(int x) {
-  int s = 0;
-  while (x > 0) {
-    s += x % 10;
-    x /= 10;
-  }
-  return s;
-}
-
 
 int main () {
   int tc; cin >> tc;
@@ -19,9 +10,17 @@ int main () {
     int n; cin >> n;
 
     int resp = 0;
+    int temp = 0;
 
     for (int i = 1; i <= n; i++) {
-      resp += soma(i);
+      int a = i / 10000;    
+      int b = (i / 1000) % 10;   
+      int c = (i / 100) % 10;  
+      int d = (i / 10) % 10;    
+      int e = i % 10;          
+
+
+      resp += (a + b + c + d + e);
     }
 
     cout << resp << endl;
