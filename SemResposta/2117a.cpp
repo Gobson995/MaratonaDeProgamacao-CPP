@@ -20,7 +20,7 @@ int main () {
       }
     }
 
-    if (opa) cout << "YES" << endl;
-    else cout << "NO" << endl;
+    if (opa) cout << "NO" << endl;
+    else cout << "YES" << endl;
   }
 }
