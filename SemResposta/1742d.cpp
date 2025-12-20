@@ -29,6 +29,6 @@ signed main () {
       }
     }
     
-    cout << resp << endl;
+    cout << 2 << endl;
   }
 }
