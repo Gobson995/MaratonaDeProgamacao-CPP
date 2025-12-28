@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+#define int long long
 
 using namespace std;
 
-int main () {
+signed main () {
   int n, s; cin >> n >> s;
 
   vector<int> a(n);
