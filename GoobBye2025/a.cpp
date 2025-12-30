@@ -8,16 +8,14 @@ int main () {
   while (tc--) {
     string s; cin >> s;
     
-    int y = 0, n = 0;
+    int y = 0;
 
     for (char c : s) {
       if (c == 'Y') y++;
-      else n++;
     }
 
-    if (n == 0) cout << "NO";
-    else if (n >= 2) cout << "YES";
-    else cout << (y == 1 ? "YES" : "NO");
+    if (y <= 1) cout << "YES";
+    else cout << "NO";
 
     cout << endl;
   }
