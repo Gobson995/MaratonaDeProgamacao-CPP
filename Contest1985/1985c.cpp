@@ -13,26 +13,22 @@ signed main () {
 
     for(int i = 0; i < n; i++) cin >> a[i];
 
-    unordered_map<int, int> freq;
-    int soma = 0, resp = 0;
+    
+    int soma = 0, resp = 0, mx = 0;
 
     for (int i = 0; i < n; i++) {
       soma += a[i];
-      freq[a[i]]++;
+      mx = max(mx, a[i]);
 
       if (i == 0) {
         if (a[i] == 0) resp++;
         continue;
       }
 
-      if (soma % 2 == 0) {
-        int meio = soma / 2;
-        if (freq.count(meio)) {
-          resp++;
+      if (soma % 2 == 0 && mx == soma / 2) {
+        resp++;
         }
-      }
     }
-
     cout << resp << endl;
   }
 }
