@@ -17,13 +17,7 @@ int main () {
       total += a[i];
     }
 
-    int impares = 0;
-
-    for(int x : a) {
-      if (x % 2 == 1) impares++;
-    }
-
-    if (impares % 2 == 0) {
+    if (total % 2 == 0) {
       cout << 0 << endl;
       continue;
     }
@@ -31,16 +25,14 @@ int main () {
     int resp = 1e9;
 
     for (int x : a) {
-      if (x % 2 == 1) {
-        int conta = 0;
-        while(x % 2 == 1) {
-          x /= 2;
-          conta++;
-        }
-        resp = min(resp, cont);
+      int conta = 0;
+      int paridade = x % 2;
+      while(x > 0 && x % 2 == paridade) {
+        x /= 2;
+        conta++;
       }
+      resp = min(resp, conta);
     }
-
     cout << resp << endl;
   }
 }
