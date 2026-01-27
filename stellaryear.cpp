@@ -12,7 +12,7 @@ signed main () {
   vector<int> resp;
 
   for(int i = 0; i < n; i++) {
-    if (x % a[i == 0]) {
+    if (x % a[i] == 0) {
       resp.push_back(i+1);
     }
   }
