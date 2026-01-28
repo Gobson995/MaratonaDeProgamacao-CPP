@@ -2,6 +2,8 @@
 #define int long long
 using namespace std;
 
+const int INF = 2000000000;
+
 signed main() {
   int tc; 
   cin >> tc;
@@ -16,15 +18,15 @@ signed main() {
     vector<pair<int,int>> eventos;
 
     for (int x : opa) {
-      int m = (x + a) / 2;
-
       if (x < a) {
-        eventos.push_back({LLONG_MIN/4, +1});
-        eventos.push_back({m, -1});
+        int m = (x + a) / 2 + 1;
+        eventos.push_back({m,+1});
+        eventos.push_back({INF + 1, -1});
       } 
       else if (x > a) {
-        eventos.push_back({m+1, +1});
-        eventos.push_back({LLONG_MAX/4, -1});
+        int r = (x + a - 1) / 2;
+        eventos.push_back({0, +1});
+        eventos.push_back({r + 1, -1});
       }
     }
 
@@ -32,13 +34,13 @@ signed main() {
 
     int atual = 0;
     int melhor = -1;
-    int resp = a;
+    int resp = 0;
 
-    for (auto e : eventos) {
-      atual += e.second;
-      if (atual > melhor) {
+    for (auto [pos, delta] : eventos) {
+      atual += delta;
+      if (atual > melhor && pos <= INF) {
           melhor = atual;
-          resp = e.first;
+          resp = pos;
       }
     }
 
